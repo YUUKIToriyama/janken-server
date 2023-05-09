@@ -1,9 +1,13 @@
 import fastify from 'fastify'
+import { createHash } from 'crypto'
 
 const server = fastify()
 
 server.get('/newGame',async (request, reply) => {
-	return 'new game'
+	const hash = createHash('sha1').update(Date.now().toString()).digest('hex')
+	reply.status(200).send({
+		gameId: hash
+	})
 })
 
 server.listen({ port: 8080}, (error, address) => {
