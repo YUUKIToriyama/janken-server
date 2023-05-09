@@ -4,12 +4,14 @@
   "description": "",
   "main": "dist/main.js",
   "scripts": {
+    "start": "tsc -p tsconfig.json && node dist/main.js",
     "lint": "eslint --fix --ext .ts src",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "ToriChan",
   "license": "MIT",
   "dependencies": {
+    "fastify": "^4.17.0"
   },
   "devDependencies": {
     "@types/node": "^20.1.1",
